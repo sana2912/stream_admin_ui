@@ -8,7 +8,6 @@ import Add_album from "./pages/add_album";
 import List_track from "./pages/list_track";
 import List_album from "./pages/list_album";
 import Sidbar from "./component/sidebar";
-import NavBar from "./component/navbar";
 function App() {
   const notify = () => toast(<Data />);
   return (
@@ -16,8 +15,7 @@ function App() {
       <ToastContainer limit={3} position="bottom-center" />
       <Sidbar />
       <div className="flex-1 flex-col h-screen overflow-auto bg-white">
-        <NavBar />
-        <div className="flex-1 h-[85%]">
+        <div className="flex-1 h-[92%]">
           <Routes>
             <Route path="/add-track" element={<Add_track />} />
             <Route path="/add-album" element={<Add_album />} />
