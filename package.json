@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "lint": "eslint .",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
