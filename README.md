@@ -1,4 +1,4 @@
-# 🎵 Stream_Admin UI
+# 🎵 Stream_Admin UI (suspensed)
 # **see this web ** [streaming frontend](https://stream-admin.netlify.app)  
 This repository is the **Admin Frontend** of the streaming application.  
 It provides UI for managing tracks and albums, including adding new content and viewing existing lists.
