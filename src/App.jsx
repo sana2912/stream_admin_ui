@@ -1,6 +1,5 @@
 import React from "react"
 import { ToastContainer, toast } from "react-toastify";
-// use react toatify to styling your notification in your app
 // learn more at : https://deadsimplechat.com/blog/react-toastify-the-complete-guide/
 import { Routes, Route } from "react-router-dom";
 import Add_track from "./pages/add_track";
