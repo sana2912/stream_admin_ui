@@ -53,30 +53,30 @@ const Add_album = () => {
         </div>)
         :
         (
-            <div>
-                <h2 className="text-[32px] text-neutral-900 mt-[24px] mx-[24px]">adding your new album info</h2>
-                <p className="text-[16px] text-neutral-600 px-[24px] mt-[20px]">all field is required</p>
-                <form onSubmit={al_submit_handler} className="flex flex-col items-start bg-white" action="">
-                    <div className="flex flex-col m-[24px] gap-[8px]">
-                        <p htmlFor="name">upload your album poster</p>
+            <div className="flex flex-col max-w-full max-h-full p-2 md:p-6">
+                <h2 className="text-lg md:text-2xl text-neutral-900">adding your new album info</h2>
+                <p className="text-[14px] text-neutral-600">all field is required</p>
+                <form onSubmit={al_submit_handler} className="flex flex-col p-2 gap-2 md:gap-4 md:p-6 max-h-full text-neutral-600 overflow-auto" action="">
+                    <div className="flex flex-col w-full gap-2 md:gap-4">
+                        <p className="text-[14px] text-neutral-600">upload your album poster</p>
                         <input onChange={(e) => set_image(e.target.files[0])} type="file" name="album_img" id="album_img" accept="image/*" hidden required />
                         <label className="w-[120px] h-[120px] cursor-pointer" htmlFor="album_img"><img className="w-[120px] h-[120px] object-cover" src={image ? URL.createObjectURL(image) : assets.upload_song} /></label>
                     </div>
-                    <div className="flex flex-col m-[26px] gap-[20px]">
-                        <div className="flex flex-col gap-[8px]">
+                    <div className="flex flex-col gap-2 md:gap-4 text-sm md:text-lg">
+                        <div className="flex flex-col">
                             <label htmlFor="name">track name</label>
-                            <input onChange={(e) => set_name(e.target.value)} value={name} className="p-[4px] border-[2px] border-solid border-neutral-500 w-[600px] focus:outline-[2px] focus:outline-black" type="text" name="name" id="name" required />
+                            <input onChange={(e) => set_name(e.target.value)} value={name} className="px-[4px] border-[2px] border-solid border-neutral-400 w-full md:w-8/10 focus:outline-none" type="text" name="name" id="name" required />
                         </div>
-                        <div className="flex flex-col gap-[8px]">
+                        <div className="flex flex-col">
                             <label htmlFor="desc">description</label>
-                            <input onChange={(e) => set_desc(e.target.value)} value={desc} className="p-[4px] border-[2px] border-solid border-neutral-500 w-[600px] focus:outline-[2px] focus:outline-black" type="text" name="desc" id="desc" required />
+                            <input onChange={(e) => set_desc(e.target.value)} value={desc} className="px-[4px] border-[2px] border-solid border-neutral-400 w-full md:w-8/10 focus:outline-none" type="text" name="desc" id="desc" required />
                         </div>
-                        <div className="flex flex-col gap-[8px]">
-                            <label htmlFor="bg_color">set your album background color</label>
+                        <div className="flex flex-col">
+                            <label htmlFor="bg_color" className="text-sm md:text-lg">set your album background color</label>
                             <input onChange={(e) => setbg_color(e.target.value)} value={bg_color} className="h-[40px] w-[80px]" type="color" name="desc" id="bg_color" />
                         </div>
                     </div>
-                    <button className="text-[20px] text-white bg-neutral-600 px-[40px] py-[4px] mx-[24px] cursor-pointer hover:bg-black">create album</button>
+                    <button className="text-sm md:text-lg text-white bg-neutral-600 mt-4 py-1 cursor-pointer hover:bg-black">create album</button>
                 </form >
             </div >
         )

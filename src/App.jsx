@@ -11,21 +11,28 @@ import Sidbar from "./component/sidebar";
 function App() {
   const notify = () => toast(<Data />);
   return (
-    <div className="flex h-screen items-start">
-      <ToastContainer limit={3} position="bottom-center" />
-      <Sidbar />
-      <div className="flex-1 flex-col h-screen overflow-auto bg-white">
-        <div className="flex-1 h-[92%]">
+    <div className="flex flex-col h-screen w-screen">
+      <div className="h-1/10 w-full">
+        <Sidbar />
+      </div>
+      <div className="h-9/10 w-full">
+        <div className="h-full">
           <Routes>
-            <Route path="/add-track" element={<Add_track />} />
+            <Route path="/" element={<Add_track />} />
             <Route path="/add-album" element={<Add_album />} />
             <Route path="/list-track" element={<List_track />} />
             <Route path="/list-album" element={<List_album />} />
           </Routes>
         </div>
       </div>
+      <ToastContainer limit={3} position="bottom-center" />
     </div >
   );
 }
 
 export default App
+
+{/* 
+  <div className="flex-1 flex-col h-screen overflow-auto bg-white">
+        
+      </div> */}

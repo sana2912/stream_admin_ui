@@ -70,34 +70,34 @@ const Add_track = () => {
         </div>
     )
         : (
-            <div>
-                <h2 className="text-[32px] text-neutral-900 mt-[24px] mx-[24px]">adding your new track info</h2>
-                <p className="text-[16px] text-neutral-600 px-[24px] mt-[20px]">all field is required</p>
-                <form onSubmit={onsubmit_handler} className="flex flex-col items-start bg-white" action="">
-                    <div className="flex gap-[32px] m-[24px]">
-                        <div className="flex flex-col gap-[32px]">
+            <div className="flex flex-col max-w-full max-h-full p-2 md:p-6">
+                <h2 className="text-lg md:text-2xl text-neutral-900">adding your new track info</h2>
+                <p className="text-[14px] text-neutral-600">all field is required</p>
+                <form onSubmit={onsubmit_handler} className="flex flex-col p-2 gap-2 md:gap-4 md:p-6 max-h-full text-neutral-600 overflow-auto">
+                    <div className="flex w-full gap-4 md:gap-6">
+                        <div className="flex flex-col">
                             <input onChange={(e) => setimage(e.target.files[0])} type="file" name="image" id="image" accept="image/*" hidden required />
-                            < label className="w-[120px] h-[120px] cursor-pointer" htmlFor="image" > <img className="w-[120px] h-[120px] object-cover" src={image ? URL.createObjectURL(image) : assets.upload_song} /></label >
+                            <label className="w-[120px] h-[120px] cursor-pointer" htmlFor="image" > <img className="w-[120px] h-[120px] object-cover" src={image ? URL.createObjectURL(image) : assets.upload_song} /></label >
                         </div >
-                        <div className="flex flex-col gap-[32px]">
+                        <div className="flex flex-col">
                             <input onChange={(e) => setaudio(e.target.files[0])} type="file" name="audio" id="audio" accept="audio/*" hidden required />
                             <label className="w-[120px] h-[120px] cursor-pointer" htmlFor="audio"><img className="w-[120px] h-[120px] object-cover" src={audio ? assets.upload_added : assets.upload_area} /></label>
                         </div>
                     </div >
-                    <div className="flex flex-col m-[24px] gap-[20px]">
-                        <div className="flex flex-col gap-[4px]">
+                    <div className="flex flex-col gap-2 md:gap-4 text-sm md:text-lg">
+                        <div className="flex flex-col">
                             <label htmlFor="name">track name</label>
-                            <input onChange={(e) => setname(e.target.value)} value={name} className="p-[4px] border-[2px] border-solid border-neutral-500 w-[600px] focus:outline-[2px] focus:outline-black" type="text" name="name" id="name" required />
+                            <input onChange={(e) => setname(e.target.value)} value={name} className="px-[4px] border-[2px] border-solid border-neutral-400 w-full md:w-8/10 focus:outline-none" type="text" name="name" id="name" required />
                         </div>
-                        <div className="flex flex-col gap-[4px]">
+                        <div className="flex flex-col">
                             <label htmlFor="desc">description</label>
-                            <input onChange={(e) => setdesc(e.target.value)} value={desc} className="p-[4px] border-[2px] border-solid border-neutral-500 w-[600px] focus:outline-[2px] focus:outline-black" type="text" name="desc" id="desc" required />
+                            <input onChange={(e) => setdesc(e.target.value)} value={desc} className="px-[4px] border-[2px] border-solid border-neutral-400 w-full md:w-8/10 focus:outline-none" type="text" name="desc" id="desc" required />
                         </div>
                     </div>
 
-                    <div className="flex flex-col gap-[8px] mx-[24px]">
+                    <div className="flex flex-col w-full text-sm md:text-lg">
                         <label htmlFor="album">select your album</label>
-                        <select onChange={(e) => setalbum(e.target.value)} defaultValue={album} className="bg-transparent p-[4px] outline-1 outline-neutral-500 text-base align-middle" name="album" id="album">
+                        <select onChange={(e) => setalbum(e.target.value)} defaultValue={album} className="w-full md:w-4/10 bg-transparent p-[4px] outline-1 outline-neutral-400 text-sm md:text-lg align-middle" name="album" id="album">
                             <option value="none">None</option>
                             {albumData.map((item, idx) => {
                                 return (
@@ -106,7 +106,7 @@ const Add_track = () => {
                             })}
                         </select>
                     </div>
-                    <button className="text-[20px] text-white bg-neutral-600 px-[20px] py-[4px] mx-[24px] my-[32px] cursor-pointer hover:bg-black">create track</button>
+                    <button className="text-sm md:text-lg text-white bg-neutral-600 mt-4 py-1 cursor-pointer hover:bg-black">create track</button>
                 </form >
             </div >
         )
